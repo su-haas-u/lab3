@@ -39,7 +39,7 @@ public class CalculatorTest {
     @Test
     public void testModulus() {
         Calculator calculator = new Calculator();
-        double result = calculator.divide(10.0, 3.0);
+        double result = calculator.modulus(10.0, 3.0);
         Assertions.assertEquals(1.0, result);
     }
 
@@ -48,7 +48,7 @@ public class CalculatorTest {
     public void testModulusByZero() {
         Calculator calculator = new Calculator();
         Assertions.assertThrows(ArithmeticException.class, () -> {
-            calculator.divide(10.0, 0.0);
+            calculator.modulus(10.0, 0.0);
         });
     }
 
@@ -66,7 +66,7 @@ public class CalculatorTest {
     public void testExponentialByZero() {
         Calculator calculator = new Calculator();
         double result = calculator.exponential(8.0, 0.0);
-        Assertions.assertEquals(0.0, result);
+        Assertions.assertEquals(1.0, result);
     }
 
     // test squareroot with negative number
@@ -98,7 +98,7 @@ public class CalculatorTest {
     public void testPercentageWithZero() {
         Calculator calculator = new Calculator();
         Assertions.assertThrows(ArithmeticException.class, () -> {
-            calculator.divide(10.0, 0.0);
+            calculator.percentage(10.0, 0.0);
         });
     }
 
@@ -107,7 +107,7 @@ public class CalculatorTest {
     public void testPercentageWithNegativeNumerator() {
         Calculator calculator = new Calculator();
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            calculator.divide(-2.0, 2.0);
+            calculator.percentage(-2.0, 2.0);
         });
     }
 
@@ -116,7 +116,7 @@ public class CalculatorTest {
     public void testPercentageWithLesserDenominatior() {
         Calculator calculator = new Calculator();
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            calculator.divide(25.0, 20.0);
+            calculator.percentage(25.0, 20.0);
         });
     }
 
