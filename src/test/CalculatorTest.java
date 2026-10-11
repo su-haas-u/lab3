@@ -87,6 +87,7 @@ public class CalculatorTest {
     }
 
     // test percentage with vaild inputs
+    @Test
     public void testPercentage() {
         Calculator calculator = new Calculator();
         double result = calculator.percentage(13.0, 20.0);
